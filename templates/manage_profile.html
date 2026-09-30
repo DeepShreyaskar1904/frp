@@ -2948,6 +2948,424 @@ html[data-theme="light"] .education-modal-card .btn-delete {
 html[data-theme="light"] .education-modal-card .btn-delete:hover {
     background: #fef2f2 !important;
 }
+/* =========================================================
+   YEAR PICKER - FINAL UI
+   ========================================================= */
+
+.year-picker-popup {
+    position: fixed !important;
+    display: none;
+
+    width: 300px;
+    min-width: 300px;
+
+    background: #1e293b;
+
+    border: 1px solid #475569;
+    border-radius: 14px;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.45),
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    z-index: 999999 !important;
+
+    color: #f8fafc;
+}
+
+.year-picker-popup.active {
+    display: block !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.year-picker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 42px;
+
+    margin-bottom: 10px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #334155;
+}
+
+
+/* Year range text */
+
+.year-range {
+    flex: 1;
+
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #f8fafc;
+
+    user-select: none;
+}
+
+
+/* Previous / Next buttons */
+
+.year-nav {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #475569;
+    border-radius: 8px;
+
+    background: #273449;
+    color: #e2e8f0;
+
+    font-size: 22px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.year-nav:hover {
+    background: #334155;
+    border-color: #6366f1;
+
+    color: #ffffff;
+}
+
+.year-nav:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   YEAR GRID
+   ========================================================= */
+
+.year-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 7px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   YEAR BUTTON
+   ========================================================= */
+
+.year-option {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #cbd5e1;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+/* Hover */
+
+.year-option:hover {
+    background: #334155;
+
+    color: #ffffff;
+
+    border-color: #475569;
+}
+
+
+/* Click */
+
+.year-option:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   SELECTED YEAR
+   ========================================================= */
+
+.year-option.selected {
+    background: #6366f1;
+
+    border-color: #818cf8;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+
+/* Selected + hover */
+
+.year-option.selected:hover {
+    background: #4f46e5;
+
+    border-color: #a5b4fc;
+}
+
+
+/* =========================================================
+   CURRENT YEAR
+   ========================================================= */
+
+.year-option.current:not(.selected) {
+    background: rgba(99, 102, 241, 0.12);
+
+    border-color: rgba(129, 140, 248, 0.35);
+
+    color: #a5b4fc;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   YEAR INPUT
+   ========================================================= */
+
+.year-input {
+    cursor: pointer;
+
+    background: #0f172a !important;
+}
+
+.year-input:focus {
+    cursor: pointer;
+}
+/* =========================================================
+   YEAR PICKER - LIGHT MODE
+   ========================================================= */
+
+html[data-theme="light"] .year-picker-popup {
+    background: #ffffff !important;
+
+    border: 1px solid #d1d5db !important;
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.15),
+        0 4px 10px rgba(15, 23, 42, 0.08) !important;
+
+    color: #1e293b !important;
+}
+
+
+/* Header */
+
+html[data-theme="light"] .year-picker-header {
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+
+/* 2021 - 2032 */
+
+html[data-theme="light"] .year-range {
+    color: #1e293b !important;
+}
+
+
+/* Previous / Next */
+
+html[data-theme="light"] .year-nav {
+    background: #f8fafc !important;
+
+    border: 1px solid #d1d5db !important;
+
+    color: #475569 !important;
+}
+
+html[data-theme="light"] .year-nav:hover {
+    background: #eef2ff !important;
+
+    border-color: #6366f1 !important;
+
+    color: #4f46e5 !important;
+}
+
+
+/* Year buttons */
+
+html[data-theme="light"] .year-option {
+    background: transparent !important;
+
+    border: 1px solid transparent !important;
+
+    color: #475569 !important;
+}
+
+
+/* Hover */
+
+html[data-theme="light"] .year-option:hover {
+    background: #f1f5f9 !important;
+
+    border-color: #cbd5e1 !important;
+
+    color: #1e293b !important;
+}
+
+
+/* Selected year */
+
+html[data-theme="light"] .year-option.selected {
+    background: #6366f1 !important;
+
+    border-color: #6366f1 !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 4px 10px rgba(99, 102, 241, 0.25) !important;
+}
+
+
+/* Selected hover */
+
+html[data-theme="light"] .year-option.selected:hover {
+    background: #4f46e5 !important;
+
+    border-color: #4f46e5 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* Current year */
+
+html[data-theme="light"] .year-option.current:not(.selected) {
+    background: #eef2ff !important;
+
+    border-color: #c7d2fe !important;
+
+    color: #4f46e5 !important;
+
+    font-weight: 600;
+}
+/* =========================================================
+   CHOOSE IMAGE / FILE INPUT
+   ========================================================= */
+
+input[type="file"] {
+    cursor: pointer;
+}
+
+html[data-theme="dark"] input[type="file"]::file-selector-button {
+    width: 170px !important;
+
+    padding: 10px 0 !important;
+
+    text-align: center;
+
+    background: #334155 !important;
+    color: #f8fafc !important;
+
+    border: none !important;
+    border-radius: 7px !important;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+html[data-theme="dark"] input[type="file"]::file-selector-button:hover {
+    background: #4f46e5 !important;
+    color: #ffffff !important;
+}
+
+/* =========================
+   LIGHT MODE
+   ========================= */
+
+html[data-theme="light"] input[type="file"] {
+    color: #334155;
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+
+html[data-theme="light"] input[type="file"]::file-selector-button {
+    background: #eef2ff;
+    color: #4338ca;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    margin-right: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+html[data-theme="light"] input[type="file"]::file-selector-button:hover {
+    background: #6366f1;
+    color: #ffffff;
+}
+/* DARK MODE - Choose File button */
+
+html[data-theme="dark"] input[type="file"]::file-selector-button {
+    background: #334155 !important;
+    color: #f8fafc !important;
+    border: none !important;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+html[data-theme="dark"] input[type="file"]::file-selector-button:hover {
+    background: #4f46e5 !important;
+    color: #ffffff !important;
+}
 </style>
 
 
@@ -3543,9 +3961,13 @@ html[data-theme="light"] .education-modal-card .btn-delete:hover {
 
                         <div class="education-card-title">
 
-                            Education {{ forloop.counter }}
+    {% if education_form.instance.degree %}
+        {{ education_form.instance.degree }}
+    {% else %}
+        Add degree
+    {% endif %}
 
-                        </div>
+</div>
 
 
                         <div class="education-card-details">
@@ -3719,38 +4141,95 @@ html[data-theme="light"] .education-modal-card .btn-delete:hover {
                         {% endfor %}
 
                     </div>
+<!-- START YEAR -->
+
+<div class="form-group">
+
+    <label class="form-label">
+        Start Year
+    </label>
+
+    <div class="year-picker-wrapper">
+
+        {{ education_formset.empty_form.start_year }}
+
+        <div class="year-picker-popup">
+
+            <div class="year-picker-header">
+
+                <button
+                    type="button"
+                    class="year-nav prev-year"
+                >
+                    ‹
+                </button>
+
+                <span class="year-range">
+                    2020 - 2031
+                </span>
+
+                <button
+                    type="button"
+                    class="year-nav next-year"
+                >
+                    ›
+                </button>
+
+            </div>
+
+            <div class="year-grid"></div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
-                    <!-- START YEAR -->
+<!-- END YEAR -->
 
-                    <div class="form-group">
+<div class="form-group">
 
-                        <label class="form-label">
+    <label class="form-label">
+        End Year
+    </label>
 
-                            Start Year
+    <div class="year-picker-wrapper">
 
-                        </label>
+        {{ education_formset.empty_form.end_year }}
 
+        <div class="year-picker-popup">
 
-                        {{ education_form.start_year }}
+            <div class="year-picker-header">
 
-                    </div>
+                <button
+                    type="button"
+                    class="year-nav prev-year"
+                >
+                    ‹
+                </button>
 
+                <span class="year-range">
+                    2020 - 2031
+                </span>
 
-                    <!-- END YEAR -->
+                <button
+                    type="button"
+                    class="year-nav next-year"
+                >
+                    ›
+                </button>
 
-                    <div class="form-group">
+            </div>
 
-                        <label class="form-label">
+            <div class="year-grid"></div>
 
-                            End Year
+        </div>
 
-                        </label>
+    </div>
 
+</div>
 
-                        {{ education_form.end_year }}
-
-                    </div>
 
 
                     <!-- DISPLAY ORDER -->
@@ -4205,10 +4684,9 @@ html[data-theme="light"] .education-modal-card .btn-delete:hover {
 
                 <div class="education-card-info">
 
-                    <div class="education-card-title">
-                        New Education
+                   <div class="education-card-title">
+                        Add degree
                     </div>
-
                     <div class="education-card-details">
 
                         <span class="education-card-degree">
@@ -5531,22 +6009,15 @@ function updateEducationCard(item) {
     }
 
 
-    if (titleText && degreeInput) {
+if (titleText) {
 
-        const match =
-            degreeInput.name.match(
-                /education-(\d+)-degree/
-            );
+    titleText.textContent =
+        degreeInput &&
+        degreeInput.value.trim()
+            ? degreeInput.value.trim()
+            : "Add degree";
 
-        if (match) {
-
-            titleText.textContent =
-                "Education " +
-                (parseInt(match[1], 10) + 1);
-
-        }
-
-    }
+}
 
 }
 
@@ -6571,131 +7042,599 @@ document.addEventListener("click", function(event) {
 
 });
 </script>
+
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================================
+   FINAL YEAR PICKER
+   ========================================================= */
 
-    {% if messages %}
+(function () {
 
-        {% for message in messages %}
+    const CURRENT_YEAR =
+        new Date().getFullYear();
 
-            {% if message.tags == 'success' %}
-
-                Swal.fire({
-                    icon: "success",
-                    title: "Success",
-                    text: "{{ message|escapejs }}",
-                    confirmButtonText: "OK",
-                    confirmButtonColor: "#6366f1",
-                    allowOutsideClick: false,
-                    allowEscapeKey: false
-                }).then((result) => {
-
-                    if (result.isConfirmed) {
-
-                            window.location.reload();
+    let activeInput = null;
+    let activePopup = null;
+    let activeRangeStart = CURRENT_YEAR - 5;
 
 
+    /* =====================================================
+       CREATE / GET POPUP
+    ===================================================== */
+
+    function getYearPopup() {
+
+        let popup =
+            document.getElementById(
+                "globalYearPicker"
+            );
+
+        if (popup) {
+            return popup;
+        }
+
+
+        popup =
+            document.createElement("div");
+
+        popup.id =
+            "globalYearPicker";
+
+        popup.className =
+            "year-picker-popup";
+
+
+        popup.innerHTML = `
+
+            <div class="year-picker-header">
+
+                <button
+                    type="button"
+                    class="year-nav prev-year"
+                >
+                    ‹
+                </button>
+
+                <span class="year-range"></span>
+
+                <button
+                    type="button"
+                    class="year-nav next-year"
+                >
+                    ›
+                </button>
+
+            </div>
+
+            <div class="year-grid"></div>
+
+        `;
+
+
+        document.body.appendChild(
+            popup
+        );
+
+
+        return popup;
+    }
+
+
+    /* =====================================================
+       RENDER YEARS
+    ===================================================== */
+
+    function renderYears() {
+
+        if (
+            !activeInput ||
+            !activePopup
+        ) {
+            return;
+        }
+
+
+        const grid =
+            activePopup.querySelector(
+                ".year-grid"
+            );
+
+        const range =
+            activePopup.querySelector(
+                ".year-range"
+            );
+
+
+        if (!grid || !range) {
+            return;
+        }
+
+
+        range.textContent =
+            activeRangeStart +
+            " - " +
+            (activeRangeStart + 11);
+
+
+        grid.innerHTML = "";
+
+
+        const selected =
+            parseInt(
+                activeInput.value,
+                10
+            );
+
+
+        for (
+            let i = 0;
+            i < 12;
+            i++
+        ) {
+
+            const year =
+                activeRangeStart + i;
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type =
+                "button";
+
+            button.className =
+                "year-option";
+
+            button.textContent =
+                year;
+
+
+            if (
+                selected === year
+            ) {
+
+                button.classList.add(
+                    "selected"
+                );
+
+            }
+
+
+            if (
+                year === CURRENT_YEAR
+            ) {
+
+                button.classList.add(
+                    "current"
+                );
+
+            }
+
+
+            button.dataset.year =
+                year;
+
+
+            grid.appendChild(
+                button
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       POSITION POPUP
+    ===================================================== */
+
+    function positionPopup() {
+
+        if (
+            !activeInput ||
+            !activePopup
+        ) {
+            return;
+        }
+
+
+        const rect =
+            activeInput.getBoundingClientRect();
+
+
+        activePopup.style.position =
+            "fixed";
+
+        activePopup.style.width =
+            rect.width + "px";
+
+        activePopup.style.left =
+            rect.left + "px";
+
+        activePopup.style.zIndex =
+            "999999";
+
+
+        activePopup.style.display =
+            "block";
+
+
+        const popupRect =
+            activePopup.getBoundingClientRect();
+
+
+        const spaceBelow =
+            window.innerHeight -
+            rect.bottom;
+
+
+        if (
+            spaceBelow >=
+            popupRect.height + 10
+        ) {
+
+            activePopup.style.top =
+                (
+                    rect.bottom + 6
+                ) + "px";
+
+        }
+        else {
+
+            activePopup.style.top =
+                Math.max(
+                    8,
+                    rect.top -
+                    popupRect.height -
+                    6
+                ) + "px";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       OPEN
+    ===================================================== */
+
+    function openYearPicker(input) {
+
+        const popup =
+            getYearPopup();
+
+
+        activeInput =
+            input;
+
+        activePopup =
+            popup;
+
+
+        if (
+            /^\d{4}$/.test(
+                String(
+                    input.value || ""
+                ).trim()
+            )
+        ) {
+
+            activeRangeStart =
+                parseInt(
+                    input.value,
+                    10
+                ) - 5;
+
+        }
+        else {
+
+            activeRangeStart =
+                CURRENT_YEAR - 5;
+
+        }
+
+
+        renderYears();
+
+        positionPopup();
+
+
+        popup.classList.add(
+            "active"
+        );
+
+
+        positionPopup();
+
+    }
+
+
+    /* =====================================================
+       CLOSE
+    ===================================================== */
+
+    function closeYearPicker() {
+
+        if (!activePopup) {
+            return;
+        }
+
+
+        activePopup.classList.remove(
+            "active"
+        );
+
+
+        activePopup.style.display =
+            "none";
+
+
+        activeInput =
+            null;
+
+        activePopup =
+            null;
+
+    }
+
+
+    /* =====================================================
+       INPUT CLICK
+       IMPORTANT: bubble phase
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const input =
+                event.target.closest(
+                    ".year-input"
+                );
+
+
+            if (!input) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+
+            openYearPicker(
+                input
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       YEAR CLICK
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const button =
+                event.target.closest(
+                    "#globalYearPicker .year-option"
+                );
+
+
+            if (
+                !button ||
+                !activeInput
+            ) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+
+            activeInput.value =
+                button.dataset.year;
+
+
+            activeInput.dispatchEvent(
+                new Event(
+                    "input",
+                    {
+                        bubbles: true
                     }
+                )
+            );
 
-                });
 
-            {% endif %}
+            activeInput.dispatchEvent(
+                new Event(
+                    "change",
+                    {
+                        bubbles: true
+                    }
+                )
+            );
 
-        {% endfor %}
 
-    {% endif %}
+            closeYearPicker();
 
-});
-function updateEducationSummary(item) {
-    if (!item) return;
-
-    const degreeInput = item.querySelector(
-        'input[name$="-degree"]'
-    );
-
-    const fieldInput = item.querySelector(
-        'input[name$="-field_of_study"]'
-    );
-
-    const degreeText = item.querySelector(
-        ".education-summary-degree"
-    );
-
-    const fieldText = item.querySelector(
-        ".education-summary-field"
+        }
     );
 
 
-    if (degreeText) {
-        degreeText.textContent =
-            degreeInput && degreeInput.value.trim()
-                ? degreeInput.value.trim()
-                : "Add degree";
-    }
+    /* =====================================================
+       PREVIOUS
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const button =
+                event.target.closest(
+                    "#globalYearPicker .prev-year"
+                );
 
 
-    if (fieldText) {
-        fieldText.textContent =
-            fieldInput && fieldInput.value.trim()
-                ? fieldInput.value.trim()
-                : "Add field of study";
-    }
-}
+            if (
+                !button ||
+                !activeInput
+            ) {
+                return;
+            }
 
 
-function bindEducationSummary(item) {
-    if (!item) return;
-
-    const degreeInput = item.querySelector(
-        'input[name$="-degree"]'
-    );
-
-    const fieldInput = item.querySelector(
-        'input[name$="-field_of_study"]'
-    );
+            event.preventDefault();
 
 
-    if (degreeInput) {
-        degreeInput.addEventListener("input", function () {
-            updateEducationSummary(item);
-        });
-    }
+            activeRangeStart -=
+                12;
 
 
-    if (fieldInput) {
-        fieldInput.addEventListener("input", function () {
-            updateEducationSummary(item);
-        });
-    }
+            renderYears();
 
+            positionPopup();
 
-    updateEducationSummary(item);
-}
-
-
-document
-    .querySelectorAll(".education-item")
-    .forEach(bindEducationSummary);
-
-
-document.addEventListener("click", function (event) {
-
-    const control = event.target.closest(
-        ".education-summary .remove-education, " +
-        ".education-summary .delete-existing, " +
-        ".education-summary .delete-existing input"
+        }
     );
 
 
-    if (control) {
-        event.preventDefault();
-        event.stopPropagation();
-    }
+    /* =====================================================
+       NEXT
+    ===================================================== */
 
-});
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            const button =
+                event.target.closest(
+                    "#globalYearPicker .next-year"
+                );
+
+
+            if (
+                !button ||
+                !activeInput
+            ) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+
+            activeRangeStart +=
+                12;
+
+
+            renderYears();
+
+            positionPopup();
+
+        }
+    );
+
+
+    /* =====================================================
+       OUTSIDE CLICK
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                !activePopup
+            ) {
+                return;
+            }
+
+
+            if (
+                event.target.closest(
+                    ".year-input"
+                )
+            ) {
+                return;
+            }
+
+
+            if (
+                event.target.closest(
+                    "#globalYearPicker"
+                )
+            ) {
+                return;
+            }
+
+
+            closeYearPicker();
+
+        }
+    );
+
+
+    /* =====================================================
+       SCROLL
+    ===================================================== */
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (activeInput) {
+                positionPopup();
+            }
+
+        },
+        true
+    );
+
+
+    /* =====================================================
+       RESIZE
+    ===================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (activeInput) {
+                positionPopup();
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESC
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeYearPicker();
+
+            }
+
+        }
+    );
+
+})();
+
+
 </script>
 {% endblock %}
-
-
-
